@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "223542759123",
+    "firebase_url": "https://sms-mobile-hub.firebaseio.com",
+    "project_id": "sms-mobile-hub",
+    "storage_bucket": "sms-mobile-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223542759123:android:c93061d6a655e7496dce26",
+        "android_client_info": {
+          "package_name": "com.example.smsmobilehub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223542759123-knunobdlksh0ksi6hle2ekkjrvtd7o7r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smsmobilehub",
+            "certificate_hash": "740c081126a48a13c4f40a32673372b975ee699b"
+          }
+        },
+        {
+          "client_id": "223542759123-a34q7eg9ec535lbc1ct4ll7ulld3ev86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs8OcWy1BoEBfEzDmDgOaCGmco3f6dYck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223542759123-a34q7eg9ec535lbc1ct4ll7ulld3ev86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
