@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.smsmobilehub">
+    package="com.smsparatodos.smsmobilehub">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <service
-            android:name=".MyFireBaseMessagingService"
+            android:name="com.smsparatodos.smsmobilehub.MyFireBaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -22,7 +22,7 @@
         </service>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.smsparatodos.smsmobilehub.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
