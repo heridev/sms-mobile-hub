@@ -20,7 +20,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
-class MyFireBaseMessagingService extends FirebaseMessagingService {
+public class MyFireBaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
 
@@ -30,6 +30,7 @@ class MyFireBaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
         String from = remoteMessage.getFrom();
 
+        Log.d(TAG, "Before checking the remoteMessage data: " + remoteMessage.getData());
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Data: " + remoteMessage.getData());
             Map<String, String> processedData = remoteMessage.getData();
@@ -51,24 +52,14 @@ class MyFireBaseMessagingService extends FirebaseMessagingService {
         }
     }
 
-    private void showNotificacion(String title, String body) {
+    @Override
+    public void onNewToken(String token) {
+        Log.d(TAG, "Refreshed token: " + token);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-
-        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle(title)
-                .setContentText(body)
-                .setAutoCancel(true)
-                .setSound(soundUri)
-                .setContentIntent(pendingIntent);
-
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0, notificationBuilder.build());
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // Instance ID token to your app server.
+        //sendRegistrationToServer(token);
     }
 
     private void sendSMS(String phoneNumber, String message)
