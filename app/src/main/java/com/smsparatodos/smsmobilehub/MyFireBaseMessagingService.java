@@ -28,19 +28,43 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
 
         Log.d(TAG, "Before checking the remoteMessage data: " + remoteMessage.getData());
         if (remoteMessage.getData().size() > 0) {
+
+            // Move this logic about data conversion into its own class
             Log.d(TAG, "Data: " + remoteMessage.getData());
             Map<String, String> processedData = remoteMessage.getData();
-            String cellPhoneNumber = processedData.get("cellphone_number");
+            String smsNumber = processedData.get("sms_number");
             String smsContent = processedData.get("sms_content");
+            String smsNotificationId = processedData.get("sms_notification_id");
+            String smsType = processedData.get("sms_type");
 
-            Log.d(TAG, "cellPhoneNumber: " + cellPhoneNumber);
+            Log.d(TAG, "smsNumber: " + smsNumber);
             Log.d(TAG, "smsContent: " + smsContent);
 
-            if(cellPhoneNumber.isEmpty() || smsContent.isEmpty()) {
+            Boolean invalidSmsContent = smsContent == null || smsContent.isEmpty();
+            Boolean invalidPhoneNumber = smsNumber == null || smsNumber.isEmpty();
+
+            if( invalidPhoneNumber || invalidSmsContent) {
                 return;
             }
 
-            sendSMS(cellPhoneNumber, smsContent);
+            String validSmsType = "transactional";
+            if (smsType != null && !smsType.isEmpty()) {
+                validSmsType = smsType;
+            }
+
+            String invalidNotificationId = "xxx";
+            String validSmsNotificationId = invalidNotificationId;
+            if (smsNotificationId != null && !smsNotificationId.isEmpty()) {
+                validSmsNotificationId = smsNotificationId;
+            }
+
+            if (validSmsType == "device_validation") {
+                // Send a smsMessage and if it was successful
+                // make http request to sms_mobile_hubs#activate after
+                return;
+            }
+
+            sendSMS(smsNumber, smsContent, validSmsNotificationId, validSmsType);
 
             // here we will trigger the SMS service and pass the values so this could be triggered
             // and once the sms is sent successfully we would request to our api
@@ -51,6 +75,10 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
         Log.d(TAG, "Refreshed token: " + token);
+        sendSMS("+523121231517",
+                "the onNewToken was triggered for this device, why?",
+                "xxx",
+                "transactional");
 
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
@@ -58,7 +86,8 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
         //sendRegistrationToServer(token);
     }
 
-    private void sendSMS(String phoneNumber, String message)
+    // Move this logic into its own class
+    private void sendSMS(String phoneNumber, String message, String smsNotificationId, String smsType)
     {
         String SENT = "SMS_SENT";
         String DELIVERED = "SMS_DELIVERED";
@@ -123,6 +152,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
         sms.sendTextMessage(phoneNumber, null, message, sentPI, deliveredPI);
     }
 
+    // Move this logic into its own class
     private String decoratePhoneNumberDigits(String phoneNumber)  {
         String lastFourDigits = "";     //substring containing last 4 characters
 
