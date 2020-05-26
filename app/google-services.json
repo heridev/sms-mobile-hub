@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "223542759123",
-    "firebase_url": "https://sms-mobile-hub.firebaseio.com",
-    "project_id": "sms-mobile-hub",
-    "storage_bucket": "sms-mobile-hub.appspot.com"
+    "project_number": "744345944860",
+    "firebase_url": "https://sms-mobile-hub-production.firebaseio.com",
+    "project_id": "sms-mobile-hub-production",
+    "storage_bucket": "sms-mobile-hub-production.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:223542759123:android:c93061d6a655e7496dce26",
+        "mobilesdk_app_id": "1:744345944860:android:f80f6b9b934298c9d230d9",
         "android_client_info": {
-          "package_name": "com.example.smsmobilehub"
+          "package_name": "com.smsparatodos.smsmobilehub"
         }
       },
       "oauth_client": [
         {
-          "client_id": "223542759123-knunobdlksh0ksi6hle2ekkjrvtd7o7r.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.smsmobilehub",
-            "certificate_hash": "740c081126a48a13c4f40a32673372b975ee699b"
-          }
-        },
-        {
-          "client_id": "223542759123-a34q7eg9ec535lbc1ct4ll7ulld3ev86.apps.googleusercontent.com",
+          "client_id": "744345944860-eups3fb4uuks968n12d5sjlo25i8336t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCs8OcWy1BoEBfEzDmDgOaCGmco3f6dYck"
+          "current_key": "AIzaSyAGB3Hcp9Nmx6_IXeleP0GxV1mJqzfWqhU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "223542759123-a34q7eg9ec535lbc1ct4ll7ulld3ev86.apps.googleusercontent.com",
+              "client_id": "744345944860-eups3fb4uuks968n12d5sjlo25i8336t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

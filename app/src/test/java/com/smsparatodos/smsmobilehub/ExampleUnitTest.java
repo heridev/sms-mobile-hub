@@ -1,4 +1,4 @@
-package com.example.smsmobilehub;
+package com.smsparatodos.smsmobilehub;
 
 import org.junit.Test;
 

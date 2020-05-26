@@ -1,15 +1,11 @@
-package com.example.smsmobilehub;
+package com.smsparatodos.smsmobilehub;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import androidx.core.app.NotificationCompat;
 
 import android.telephony.SmsManager;
 import android.util.Log;
