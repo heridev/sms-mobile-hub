@@ -52,7 +52,7 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
                 validSmsType = smsType;
             }
 
-            String invalidNotificationId = "xxx";
+            String invalidNotificationId = "";
             String validSmsNotificationId = invalidNotificationId;
             if (smsNotificationId != null && !smsNotificationId.isEmpty()) {
                 validSmsNotificationId = smsNotificationId;
