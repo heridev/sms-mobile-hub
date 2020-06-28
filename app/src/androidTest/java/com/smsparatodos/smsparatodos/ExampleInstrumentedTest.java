@@ -1,4 +1,4 @@
-package com.smsparatodos.smsmobilehub;
+package com.smsparatodos.smsparatodos;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.smsmobilehub", appContext.getPackageName());
+        assertEquals("com.example.smsparatodos", appContext.getPackageName());
     }
 }
