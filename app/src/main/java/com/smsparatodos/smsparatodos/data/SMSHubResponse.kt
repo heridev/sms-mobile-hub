@@ -7,13 +7,13 @@ import com.squareup.moshi.Json
  */
 data class SMSHubResponse(
     @field:Json(name = "data")
-    val data: Data
+    var data: Data
 )
 
 data class Data(
     @field:Json(name = "message")
-    val message: String,
+    var message: String? = null,
 
     @field:Json(name = "error")
-    val error: String
+    var error: String? = null
 )
