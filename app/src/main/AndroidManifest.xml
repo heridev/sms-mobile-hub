@@ -34,7 +34,7 @@
             android:name=".devicevalidation.ProcessingNotificationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".devicevalidation.SendSMSErrorActivity"
+            android:name=".devicevalidation.PinValidationErrorActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
