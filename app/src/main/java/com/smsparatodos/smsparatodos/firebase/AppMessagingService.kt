@@ -9,8 +9,9 @@ import android.content.IntentFilter
 import android.telephony.SmsManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.smsparatodos.smsparatodos.sendsms.SendSMSWorkManager
+import com.smsparatodos.smsparatodos.data.SMSHubService
 import com.smsparatodos.smsparatodos.data.local.AppPreferences
-import com.smsparatodos.smsparatodos.devicevalidation.UpdateStatusWorker
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.ACTIVATE_DEVICE_INTENT_FILTER
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.SMS_MESSAGE_SENT
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.SMS_NOTIFICATION_UID_KEY
@@ -24,9 +25,26 @@ class AppMessagingService : FirebaseMessagingService() {
     @Inject
     lateinit var appPreferences: AppPreferences
 
+    @Inject
+    lateinit var smsHubService: SMSHubService
+
+    private var receiver: BroadcastReceiver? = null
+
     override fun onCreate() {
         AndroidInjection.inject(this)
         super.onCreate()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        receiver ?: return
+
+        try {
+            unregisterReceiver(receiver)
+        } catch (exception: Exception) {
+            Timber.d(exception)
+        }
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
@@ -42,7 +60,6 @@ class AppMessagingService : FirebaseMessagingService() {
             val smsContent = processedData["sms_content"] ?: ""
             val smsNotificationId = processedData["sms_notification_id"] ?: ""
             val smsType = processedData["sms_type"] ?: ""
-
 
             if (Objects.equals(smsType, "device_validation")) {
                 sendActivationSMS(smsNumber, smsContent, smsNotificationId)
@@ -82,46 +99,36 @@ class AppMessagingService : FirebaseMessagingService() {
                     }
                 }
             }
-        }, IntentFilter(SEND_SMS_INTENT_FILTER))
+        }, IntentFilter(DEVICE_VALIDATION_INTENT_FILTER))
 
         val smsManager = SmsManager.getDefault()
-        val sentPI = PendingIntent.getBroadcast(this, 0, Intent(SEND_SMS_INTENT_FILTER), 0)
+        val sentPI = PendingIntent.getBroadcast(this, 0, Intent(DEVICE_VALIDATION_INTENT_FILTER), 0)
         smsManager.sendTextMessage(phoneNumber, null, message, sentPI, null)
     }
 
     private fun sendSMS(phoneNumber: String, message: String, smsNotificationId: String) {
-
-        registerReceiver(object : BroadcastReceiver() {
-            override fun onReceive(context: Context, intent: Intent) {
-                when (resultCode) {
-                    Activity.RESULT_OK -> {
-                        UpdateStatusWorker.run(
-                            smsNotificationId,
-                            DELIVERED,
-                            "",
-                            appPreferences.firebaseToken
-                        )
-                    }
-                    else -> {
-                        UpdateStatusWorker.run(
-                            smsNotificationId,
-                            UNDELIVERED,
-                            "",
-                            appPreferences.firebaseToken
-                        )
-                    }
-                }
-            }
-        }, IntentFilter(SEND_SMS_INTENT_FILTER))
-
-        val smsManager = SmsManager.getDefault()
-        val sentPI = PendingIntent.getBroadcast(this, 0, Intent(SEND_SMS_INTENT_FILTER), 0)
-        smsManager.sendTextMessage(phoneNumber, null, message, sentPI, null)
+        SendSMSWorkManager.run(
+            phoneNumber,
+            message,
+            smsNotificationId,
+            appPreferences.firebaseToken
+        )
     }
 
     companion object {
-        const val SEND_SMS_INTENT_FILTER = "send_sms_intent_filter"
+        const val DEVICE_VALIDATION_INTENT_FILTER = "device_validation_intent_filter"
+
+        // SMS Status
         const val DELIVERED = "delivered"
         const val UNDELIVERED = "undelivered"
+
+        // SMS Additional Info
+        const val SUCCESS = "success"
+        const val GENERIC_FAILURE = "generic failure"
+        const val RADIO_OFF = "radio off"
+        const val NULL_PDU = "null pdu"
+        const val NO_SERVICE = "no service"
+        const val LIMIT_EXCEEDED = "limit exceeded"
+        const val UNKNOWN = "unknown"
     }
 }

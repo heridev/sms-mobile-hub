@@ -45,7 +45,7 @@ class ValidateDeviceFragment : BaseFragment() {
             })
 
             validatePinErrorEvent.observe(viewLifecycleOwner, Observer {
-                startActivity(Intent(context, SendSMSErrorActivity::class.java))
+                startActivity(Intent(context, PinValidationErrorActivity::class.java))
             })
 
             activateDeviceSuccessEvent.observe(viewLifecycleOwner, Observer {
