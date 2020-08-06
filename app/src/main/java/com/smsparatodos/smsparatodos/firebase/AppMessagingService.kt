@@ -9,12 +9,12 @@ import android.content.IntentFilter
 import android.telephony.SmsManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.smsparatodos.smsparatodos.sendsms.SendSMSWorkManager
 import com.smsparatodos.smsparatodos.data.SMSHubService
 import com.smsparatodos.smsparatodos.data.local.AppPreferences
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.ACTIVATE_DEVICE_INTENT_FILTER
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.SMS_MESSAGE_SENT
 import com.smsparatodos.smsparatodos.devicevalidation.ValidateDeviceActivity.Companion.SMS_NOTIFICATION_UID_KEY
+import com.smsparatodos.smsparatodos.sendsms.SendSMSWorkManager
 import dagger.android.AndroidInjection
 import timber.log.Timber
 import java.util.*
