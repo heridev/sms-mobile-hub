@@ -1,6 +1,9 @@
 package com.smsparatodos.smsparatodos.data.remote
 
-import com.smsparatodos.smsparatodos.data.*
+import com.smsparatodos.smsparatodos.data.ActivateDeviceRequest
+import com.smsparatodos.smsparatodos.data.SMSHubService
+import com.smsparatodos.smsparatodos.data.ValidateDeviceDataSource
+import com.smsparatodos.smsparatodos.data.ValidateDeviceRequest
 import com.smsparatodos.smsparatodos.data.local.AppPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,9 +27,7 @@ class ValidateDeviceRemoteDataSource @Inject constructor(
         CoroutineScope(Dispatchers.IO).launch {
             val response =
                 smsHubService.validateDevice(
-                    ValidateDeviceRequest(
-                        SMSMobileHub(deviceTokenCode, appPreferences.firebaseToken)
-                    )
+                    ValidateDeviceRequest(deviceTokenCode, appPreferences.firebaseToken)
                 )
 
             withContext(Dispatchers.Main) {
