@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMS Para Todos</string>
+
+    <!-- SMS Permissions -->
+    <string name="label_permissions">Permisos</string>
+    <string name="label_permissions_message">Para que esta aplicación funcione correctamente, es necesario otorgar los permisos solicitados.</string>
+    <string name="label_permissions_message_mandatory">Para que esta aplicación funcione correctamente, es necesario otorgar los permisos solicitados. Por favor habilite esto en la configuración de su aplicación.</string>
+
+    <!-- Add Device -->
+    <string name="label_enter_activation_pin_message">Ingresa el pin de activación del nuevo dispositivo (visita smsparatodos.com)</string>
+    <string name="label_continue">Continuar</string>
+    <string name="label_enter_pin">Ingresar pin</string>
+    <string name="label_sms_successfully_validated">En breve recibirás un sms confirmando el estado del dispositivo</string>
+    <string name="label_sms_successfully_activated">El dispositivo se activó correctamente, disfruta de smsparatodos.com</string>
+    <string name="error_invalid_device">El código es inválido o el dispositivo ya fue activado anteriormente</string>
+    <string name="error_invalid_pin">Ocurrió un error al momento de validar el pin</string>
+    <string name="label_return">Volver</string>
+    <string name="label_sending_test_sms">Enviando SMS de prueba</string>
+    <string name="label_processing_notifications">Procesando notificaciones</string>
+    <string name="label_activate_device_error_message">Ocurrió un error al momento de validar el dispositivo, favor de revisar que el dispositivo se encuentra conectado a una red de telefonía válida y que cuenta con un plan de envio de SMS</string>
+    <string name="label_activate_device_error_message_suggest">En caso de recibir el error más de dos veces, le sugerimos desinstalar e instalar nuevamente la aplicación</string>
+    <string name="label_try_again">Intentar nuevamente</string>
+</resources>

@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:744345944860:android:f80f6b9b934298c9d230d9",
+        "mobilesdk_app_id": "1:744345944860:android:35ab5d5e9495fd41d230d9",
         "android_client_info": {
-          "package_name": "com.smsparatodos.smsmobilehub"
+          "package_name": "com.smsparatodos.smsparatodos"
         }
       },
       "oauth_client": [
