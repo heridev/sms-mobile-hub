@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -31,7 +32,7 @@
             android:name=".devicevalidation.ActivateDeviceErrorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".devicevalidation.ProcessingNotificationsActivity"
+            android:name=".sms.ProcessingNotificationsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".devicevalidation.PinValidationErrorActivity"
@@ -51,6 +52,17 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <receiver
+            android:name=".sms.SMSBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
