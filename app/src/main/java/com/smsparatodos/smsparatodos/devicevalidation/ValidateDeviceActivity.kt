@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.smsparatodos.smsparatodos.BaseAppCompatActivity
 import com.smsparatodos.smsparatodos.R
+import com.smsparatodos.smsparatodos.sms.ProcessingNotificationsActivity
 import com.smsparatodos.smsparatodos.util.executePermissionRequest
 import com.smsparatodos.smsparatodos.util.replaceFragmentInActivity
 import kotlinx.android.synthetic.main.activity_main.*
