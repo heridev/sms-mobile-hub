@@ -114,10 +114,10 @@ class SendSMSWorkManager(
 
     companion object {
 
-        const val SMS_PHONE_NUMBER = "phone_number"
-        const val SMS_MESSAGE = "message"
-        const val SMS_NOTIFICATION_UID = "sms_notification_uid"
-        const val FIREBASE_TOKEN = "firebase_token"
+        private const val SMS_PHONE_NUMBER = "phone_number"
+        private const val SMS_MESSAGE = "message"
+        private const val SMS_NOTIFICATION_UID = "sms_notification_uid"
+        private const val FIREBASE_TOKEN = "firebase_token"
 
         const val SEND_SMS_INTENT_FILTER = "send_sms_intent_filter"
 

@@ -4,7 +4,6 @@
     package="com.smsparatodos.smsparatodos">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -32,7 +31,7 @@
             android:name=".devicevalidation.ActivateDeviceErrorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".sms.ProcessingNotificationsActivity"
+            android:name=".receivesms.ProcessingNotificationsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".devicevalidation.PinValidationErrorActivity"
@@ -54,7 +53,7 @@
         </service>
 
         <receiver
-            android:name=".sms.SMSBroadcastReceiver"
+            android:name=".receivesms.IncomingSMSBroadcastReceiver"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BROADCAST_SMS">

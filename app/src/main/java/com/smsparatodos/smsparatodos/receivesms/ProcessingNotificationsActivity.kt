@@ -1,7 +1,6 @@
-package com.smsparatodos.smsparatodos.sms
+package com.smsparatodos.smsparatodos.receivesms
 
 import android.Manifest
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,29 +10,14 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.smsparatodos.smsparatodos.R
 import com.smsparatodos.smsparatodos.util.executePermissionRequest
 
-
 class ProcessingNotificationsActivity : AppCompatActivity() {
-
-    private val receiver = SMSBroadcastReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_processing_notifications)
-    }
 
-    override fun onResume() {
-        super.onResume()
-        if (hasReceiveSMSPermission()) {
-            registerReceiver(receiver, IntentFilter(SMSBroadcastReceiver.SMS_RECEIVED_FILTER))
-        } else {
+        if (!hasReceiveSMSPermission()) {
             requestPermissions()
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (hasReceiveSMSPermission()) {
-            unregisterReceiver(receiver)
         }
     }
 
@@ -69,13 +53,8 @@ class ProcessingNotificationsActivity : AppCompatActivity() {
         when (requestCode) {
             PERMISSIONS_REQUEST_RECEIVE_SMS -> {
                 if (grantResults.isNotEmpty()
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[0] == PackageManager.PERMISSION_DENIED
                 ) {
-                    registerReceiver(
-                        receiver,
-                        IntentFilter(SMSBroadcastReceiver.SMS_RECEIVED_FILTER)
-                    )
-                } else {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(
                             this,
                             Manifest.permission.RECEIVE_SMS
@@ -85,7 +64,6 @@ class ProcessingNotificationsActivity : AppCompatActivity() {
                     } else {
                         requestPermissionsRationaleExplanation()
                     }
-                    return
                 }
             }
         }
