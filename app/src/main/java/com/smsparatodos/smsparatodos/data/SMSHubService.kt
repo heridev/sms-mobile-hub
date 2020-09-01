@@ -17,4 +17,7 @@ interface SMSHubService {
 
     @PUT("android/sms_notifications/update_status")
     suspend fun updateNotificationStatus(@Body updateStatusRequest: UpdateStatusRequest): Response<SMSHubResponse>
+
+    @POST("android/sms_notifications/receive")
+    suspend fun postReceivedMessage(@Body postReceivedMessageRequest: PostReceivedMessageRequest): Response<SMSHubResponse>
 }
