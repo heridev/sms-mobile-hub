@@ -44,6 +44,24 @@ android {
         }
     }
 
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            dimension "default"
+        }
+        prod {
+            dimension "default"
+        }
+    }
+
+    android.variantFilter { variant ->
+        if (variant.buildType.name == 'release'
+                && variant.getFlavors().get(0).name == 'dev') {
+            variant.setIgnore(true)
+        }
+    }
+
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             outputFileName = "smsparatodos-v${variant.versionName}.apk"
