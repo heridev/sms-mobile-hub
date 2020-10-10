@@ -105,9 +105,10 @@ class SendSMSWorkManager(
         }, IntentFilter(SEND_SMS_INTENT_FILTER))
 
         val smsManager = SmsManager.getDefault()
+        val smsArray = smsManager.divideMessage(message)
         val sentPI =
             PendingIntent.getBroadcast(applicationContext, 0, Intent(SEND_SMS_INTENT_FILTER), 0)
-        smsManager.sendTextMessage(phoneNumber, null, message, sentPI, null)
+        smsManager.sendMultipartTextMessage(phoneNumber, null, smsArray, arrayListOf(sentPI), null)
 
         return@coroutineScope Result.success()
     }
