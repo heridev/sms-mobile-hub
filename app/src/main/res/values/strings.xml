@@ -10,7 +10,7 @@
     <string name="label_permissions_message_mandatory">For this application to work properly it is necessary to grant the requested permissions. Please enable this in your application settings.</string>
 
     <!-- Add Device -->
-    <string name="label_enter_activation_pin_message">Enter the activation pin of the new device (visit smsforall.org)</string>
+    <string name="label_enter_activation_pin_message">Enter the activation pin of the new devise (Get a PIN from https://app.smsforall.org)</string>
     <string name="label_continue">Continue</string>
     <string name="label_enter_pin">Enter pin</string>
     <string name="label_sms_successfully_validated">You will shortly receive an SMS confirming the status of the device</string>
