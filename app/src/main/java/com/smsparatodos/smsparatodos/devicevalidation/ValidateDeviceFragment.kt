@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.smsparatodos.smsparatodos.BaseFragment
 import com.smsparatodos.smsparatodos.R
+import com.smsparatodos.smsparatodos.receivesms.ProcessingNotificationsActivity
 import com.smsparatodos.smsparatodos.util.toast
 import kotlinx.android.synthetic.main.add_device_fragment.*
 

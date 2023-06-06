@@ -17,7 +17,7 @@
     <string name="error_invalid_pin">Ocurrió un error al momento de validar el pin</string>
     <string name="label_return">Volver</string>
     <string name="label_sending_test_sms">Enviando SMS de prueba</string>
-    <string name="label_processing_notifications">Procesando notificaciones</string>
+    <string name="label_processing_notifications">Gestionando notificaciones</string>
     <string name="label_activate_device_error_message">Ocurrió un error al momento de validar el dispositivo, favor de revisar que el dispositivo se encuentra conectado a una red de telefonía válida y que cuenta con un plan de envio de SMS</string>
     <string name="label_activate_device_error_message_suggest">En caso de recibir el error más de dos veces, le sugerimos desinstalar e instalar nuevamente la aplicación</string>
     <string name="label_try_again">Intentar nuevamente</string>

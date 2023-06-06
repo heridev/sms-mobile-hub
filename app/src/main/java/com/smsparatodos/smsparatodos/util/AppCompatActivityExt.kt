@@ -1,5 +1,6 @@
 package com.smsparatodos.smsparatodos.util
 
+import android.widget.Toast
 import androidx.annotation.IntRange
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
@@ -36,4 +37,8 @@ fun AppCompatActivity.executePermissionRequest(
     @IntRange(from = 0) requestCode: Int
 ) {
     ActivityCompat.requestPermissions(this, permissions, requestCode)
+}
+
+fun AppCompatActivity.toast(message: String, length: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, message, length).show()
 }
