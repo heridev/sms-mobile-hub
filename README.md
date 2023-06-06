@@ -1,4 +1,4 @@
-Android App for Smsparatodos.com
+Android App for smsforall.org
 =================================
 
 ## Api request

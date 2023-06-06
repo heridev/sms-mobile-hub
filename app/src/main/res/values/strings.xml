@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SMS Para Todos</string>
+    <string name="app_name">smsforall.org</string>
 
     <string name="default_notification_channel_id" translatable="false">Channel ID</string>
 
@@ -10,11 +10,11 @@
     <string name="label_permissions_message_mandatory">For this application to work properly it is necessary to grant the requested permissions. Please enable this in your application settings.</string>
 
     <!-- Add Device -->
-    <string name="label_enter_activation_pin_message">Enter the activation pin of the new device (visit smsparatodos.com)</string>
+    <string name="label_enter_activation_pin_message">Enter the activation pin of the new device (visit smsforall.org)</string>
     <string name="label_continue">Continue</string>
     <string name="label_enter_pin">Enter pin</string>
     <string name="label_sms_successfully_validated">You will shortly receive an SMS confirming the status of the device</string>
-    <string name="label_sms_successfully_activated">The device was activated correctly, enjoy smsparatodos.com</string>
+    <string name="label_sms_successfully_activated">The device was activated correctly, enjoy smsforall.org</string>
     <string name="error_invalid_device">The code is invalid or the device has been previously activated</string>
     <string name="error_invalid_pin">An error occurred when validating the pin</string>
     <string name="label_return">Return</string>
