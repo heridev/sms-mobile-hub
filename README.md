@@ -21,3 +21,10 @@ git push origin v1.2
 ## Big features
 - Receive sms - intercept SMS notifications
 - Send messages
+
+## Branches management
+
+We use the branch `develop` for developing new stuff and once we want to make a new release
+then we merge that into the `main` branch and create a new apk signed package.
+
+
