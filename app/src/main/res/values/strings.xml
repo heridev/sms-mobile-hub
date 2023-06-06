@@ -19,7 +19,7 @@
     <string name="error_invalid_pin">An error occurred when validating the pin</string>
     <string name="label_return">Return</string>
     <string name="label_sending_test_sms">Sending test SMS</string>
-    <string name="label_processing_notifications">Processing notifications</string>
+    <string name="label_processing_notifications">Managing notifications</string>
     <string name="label_activate_device_error_message">An error occurred when validating the device, please check that the device is connected to a valid telephone network and that it has an SMS sending plan</string>
     <string name="label_activate_device_error_message_suggest">In case you receive the error more than twice, we suggest you uninstall and reinstall the application</string>
     <string name="label_try_again">Try again</string>
