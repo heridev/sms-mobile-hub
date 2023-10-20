@@ -1,6 +1,16 @@
 Android App for smsforall.org
 =================================
 
+## Do you want to install the latest APK app in Android
+Please visit the following site for more details
+https://smsforall.org/download/
+
+or you can download directly the apk from the following S3 bucket:
+https://smsforall-prod.s3.amazonaws.com/smsforall-v1.3.apk
+
+Or you can download the source code and build your own APK version with your
+own API(the open-source backend should be available soon - It is a promise)
+
 ## Api request
 For this we are going to use Retrofit 2
 
