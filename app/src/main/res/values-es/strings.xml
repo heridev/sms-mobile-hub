@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SMS Para Todos</string>
+    <string name="app_name">smsforall.org</string>
 
     <!-- SMS Permissions -->
-    <string name="label_permissions">Permisos</string>
-    <string name="label_permissions_message">Para que esta aplicación funcione correctamente, es necesario otorgar los permisos solicitados.</string>
-    <string name="label_permissions_message_mandatory">Para que esta aplicación funcione correctamente, es necesario otorgar los permisos solicitados. Por favor habilite esto en la configuración de su aplicación.</string>
+    <string name="label_permissions">Permissions</string>
+    <string name="label_permissions_message">In order to allow smsforall.org to work properly, you need to give the right permissions.</string>
+    <string name="label_permissions_message_mandatory">In order to allow smsforall.org to work properly, you need to give the right permissions.</string>
 
     <!-- Add Device -->
-    <string name="label_enter_activation_pin_message">Ingresa el pin de activación del nuevo dispositivo (visita smsparatodos.com)</string>
-    <string name="label_continue">Continuar</string>
-    <string name="label_enter_pin">Ingresar pin</string>
-    <string name="label_sms_successfully_validated">En breve recibirás un sms confirmando el estado del dispositivo</string>
-    <string name="label_sms_successfully_activated">El dispositivo se activó correctamente, disfruta de smsparatodos.com</string>
-    <string name="error_invalid_device">El código es inválido o el dispositivo ya fue activado anteriormente</string>
-    <string name="error_invalid_pin">Ocurrió un error al momento de validar el pin</string>
-    <string name="label_return">Volver</string>
-    <string name="label_sending_test_sms">Enviando SMS de prueba</string>
-    <string name="label_processing_notifications">Gestionando notificaciones</string>
-    <string name="label_activate_device_error_message">Ocurrió un error al momento de validar el dispositivo, favor de revisar que el dispositivo se encuentra conectado a una red de telefonía válida y que cuenta con un plan de envio de SMS</string>
-    <string name="label_activate_device_error_message_suggest">En caso de recibir el error más de dos veces, le sugerimos desinstalar e instalar nuevamente la aplicación</string>
-    <string name="label_try_again">Intentar nuevamente</string>
+    <string name="label_enter_activation_pin_message">Enter the activation pin of the new devise (Get a PIN from https://app.smsforall.org)</string>
+    <string name="label_continue">Continue</string>
+    <string name="label_enter_pin">Enter PIN</string>
+    <string name="label_sms_successfully_validated">Shortly you\'ll receive an SMS message confirming the status of the device</string>
+    <string name="label_sms_successfully_activated">The device was activated successfully, enjoy smsforall.org</string>
+    <string name="error_invalid_device">The PIN code is invalid or it was already activated</string>
+    <string name="error_invalid_pin">An error ocurred when trying to validate the PIN number</string>
+    <string name="label_return">Go back</string>
+    <string name="label_sending_test_sms">Sending an SMS message test</string>
+    <string name="label_processing_notifications">Processing notifications</string>
+    <string name="label_activate_device_error_message">And error ocurred when trying to validate the device, please make sure your device has a valid plan and correctly connected to a Network connection and that you are able to send SMS messages manually</string>
+    <string name="label_activate_device_error_message_suggest">If you already received this error message more than once, please try to uninstall and install again the application</string>
+    <string name="label_try_again">Please try again</string>
 </resources>

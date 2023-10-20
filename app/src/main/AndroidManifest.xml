@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.smsparatodos.smsparatodos">
+    package="com.smsforall.smsforall">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name=".BaseApp"
+        android:name="com.smsforall.smsforall.BaseApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n">
         <activity
-            android:name=".devicevalidation.ValidateDeviceActivity"
+            android:name="com.smsforall.smsforall.devicevalidation.ValidateDeviceActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,13 +28,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".devicevalidation.ActivateDeviceErrorActivity"
+            android:name="com.smsforall.smsforall.devicevalidation.ActivateDeviceErrorActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".receivesms.ProcessingNotificationsActivity"
+            android:name="com.smsforall.smsforall.receivesms.ProcessingNotificationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".devicevalidation.PinValidationErrorActivity"
+            android:name="com.smsforall.smsforall.devicevalidation.PinValidationErrorActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -45,7 +45,7 @@
             android:resource="@color/color_accent" />
 
         <service
-            android:name=".firebase.AppMessagingService"
+            android:name="com.smsforall.smsforall.firebase.AppMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -53,7 +53,7 @@
         </service>
 
         <receiver
-            android:name=".receivesms.IncomingSMSBroadcastReceiver"
+            android:name="com.smsforall.smsforall.receivesms.IncomingSMSBroadcastReceiver"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BROADCAST_SMS">
