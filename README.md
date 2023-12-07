@@ -37,4 +37,10 @@ git push origin v1.2
 We use the branch `develop` for developing new stuff and once we want to make a new release
 then we merge that into the `main` branch and create a new apk signed package.
 
+## Rails Backend API for https://api.smsforall.org
+https://github.com/heridev/smsforall-rails-api
+
+## React app application for https://app.smsforall.org
+https://github.com/heridev/smsforall-react-app
+
 
