@@ -1,6 +1,15 @@
 Android App for smsforall.org
 =================================
 
+## How to setup the project locally?
+1. Clone the repo
+2. Open Android Studio
+3. Configure your Backend API according to your needs, in this https://github.com/heridev/sms-mobile-hub/blob/main/gradle.properties#L24 file
+4. Rebuild the project without errors
+![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/f41327f0-4521-4b5c-8213-f7914cc2549f)
+5. Generate the APK so you can install it in your Phone, or download this one that is ready for installation
+[link Pending](https://)
+
 ## Do you want to install the latest APK app in Android
 Please visit the following site for more details
 https://smsforall.org/download/
