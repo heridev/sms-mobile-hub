@@ -15,10 +15,18 @@ I'm planning to create some videos for that purpose, but in the meanwhile,
 1. Clone the repo
 2. Open Android Studio
 3. Configure your Backend API according to your needs, in this https://github.com/heridev/sms-mobile-hub/blob/main/gradle.properties#L24 file
-4. Rebuild the project without errors
+4. Create a new Firebase project in the console and after that create a new SDK app, by following some steps like this
+![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/3eeeaf20-f946-4d77-bf2c-9d5240c5efb1)
+![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/327bda05-4df7-430d-a3ec-f3623fd3fe5a)
+![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/327cd317-6f0e-4954-96cf-22caef8bff01)
+5. Then Download your Firebase credentials(google-services.json) and place them within the `app` folder and the file will look like this `app/google-services.json`
+6. Rebuild the project without errors(sync project option)
 ![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/f41327f0-4521-4b5c-8213-f7914cc2549f)
-5. Generate the APK so you can install it on your Phone, or download this one that is ready for installation
-[link Pending](https://)
+7. Generate the APK selecting the variant(prodDebug)
+![image](https://github.com/heridev/sms-mobile-hub/assets/1863670/dd9240f3-bc4c-4271-aa9f-099aab097321)
+8. Upload it into a public hosting provider such as Google Drive, AWS S3, etc
+9. Install it on your Android Device
+Get access to your React Application in development so you can get a new activation pin.
 
 ## Would you like to install the latest APK app on Android?
 Please visit the following site for more details
